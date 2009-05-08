@@ -23,7 +23,7 @@ module Webrat
   class SeleniumSession
     include Webrat::SaveAndOpenPage
 
-    def initialize(*args) # :nodoc:
+    def initialize(*args) 
     end
 
     def simulate
@@ -51,7 +51,7 @@ module Webrat
       SeleniumResponse.new(self, response_body)
     end
 
-    def response_body #:nodoc:
+    def response_body 
       selenium.get_html_source
     end
 
@@ -191,7 +191,7 @@ module Webrat
       stream.reopen(old_stream)
     end
 
-    def setup #:nodoc:
+    def setup 
       Webrat::Selenium::SeleniumRCServer.boot
       Webrat::Selenium::ApplicationServer.boot
 
@@ -216,7 +216,7 @@ module Webrat
       end
     end
 
-    def adjust_if_regexp(text_or_regexp) #:nodoc:
+    def adjust_if_regexp(text_or_regexp) 
       if text_or_regexp.is_a?(Regexp)
         "evalregex:#{text_or_regexp.inspect}"
       else
@@ -224,13 +224,13 @@ module Webrat
       end
     end
 
-    def extend_selenium #:nodoc:
+    def extend_selenium 
       extensions_file = File.join(File.dirname(__FILE__), "selenium_extensions.js")
       extenions_js = File.read(extensions_file)
       selenium.get_eval(extenions_js)
     end
 
-    def define_location_strategies #:nodoc:
+    def define_location_strategies 
       Dir[File.join(File.dirname(__FILE__), "location_strategy_javascript", "*.js")].sort.each do |file|
         strategy_js = File.read(file)
         strategy_name = File.basename(file, '.js')

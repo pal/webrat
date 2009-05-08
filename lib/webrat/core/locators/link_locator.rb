@@ -3,7 +3,7 @@ require "webrat/core/locators/locator"
 module Webrat
   module Locators
 
-    class LinkLocator < Locator # :nodoc:
+    class LinkLocator < Locator 
 
       def locate
         Link.load(@session, link_element)
@@ -58,7 +58,7 @@ module Webrat
 
     end
 
-    def find_link(text_or_title_or_id) #:nodoc:
+    def find_link(text_or_title_or_id) 
       LinkLocator.new(@session, dom, text_or_title_or_id).locate!
     end
 

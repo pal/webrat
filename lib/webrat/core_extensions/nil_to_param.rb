@@ -1,4 +1,4 @@
-class NilClass #:nodoc:
+class NilClass 
   def to_param
     nil
   end

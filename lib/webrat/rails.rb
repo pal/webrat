@@ -5,7 +5,7 @@ require "action_controller/integration"
 require "action_controller/record_identifier"
 
 module Webrat
-  class RailsSession < Session #:nodoc:
+  class RailsSession < Session 
     include ActionController::RecordIdentifier
 
     # The Rails version of within supports passing in a model and Webrat
@@ -65,13 +65,13 @@ module Webrat
       @context
     end
 
-    def do_request(http_method, url, data, headers) #:nodoc:
+    def do_request(http_method, url, data, headers) 
       update_protocol(url)
       integration_session.send(http_method, normalize_url(url), data, headers)
     end
 
     # remove protocol, host and anchor
-    def normalize_url(href) #:nodoc:
+    def normalize_url(href) 
       uri = URI.parse(href)
       normalized_url = []
       normalized_url << "#{uri.scheme}://" if uri.scheme
@@ -82,7 +82,7 @@ module Webrat
       normalized_url.join
     end
 
-    def update_protocol(href) #:nodoc:
+    def update_protocol(href) 
       if href =~ /^https:/
         integration_session.https!(true)
       elsif href =~ /^http:/
@@ -90,14 +90,14 @@ module Webrat
       end
     end
 
-    def response #:nodoc:
+    def response 
       integration_session.response
     end
 
   end
 end
 
-module ActionController #:nodoc:
+module ActionController 
   IntegrationTest.class_eval do
     include Webrat::Methods
     include Webrat::Matchers

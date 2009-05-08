@@ -1,6 +1,6 @@
 require 'webrat'
 
-class CGIMethods #:nodoc:
+class CGIMethods 
   def self.parse_query_parameters(params)
     hash = {}
     params.split('&').each do |p|
@@ -12,7 +12,7 @@ class CGIMethods #:nodoc:
 end
 
 module Webrat
-  class RackSession < Session #:nodoc:
+  class RackSession < Session 
     def response_body
       @response.body
     end

@@ -1,12 +1,12 @@
 require "mechanize"
 
-module Webrat #:nodoc:
-  class MechanizeSession < Session #:nodoc:
+module Webrat 
+  class MechanizeSession < Session 
 
     attr_accessor :response
     alias :page :response
 
-    def request_page(url, http_method, data) #:nodoc:
+    def request_page(url, http_method, data) 
       super(absolute_url(url), http_method, data)
     end
 
@@ -41,7 +41,7 @@ module Webrat #:nodoc:
 
     def_delegators :mechanize, :basic_auth
 
-    def absolute_url(url) #:nodoc:
+    def absolute_url(url) 
       current_host, current_path = split_current_url
       if url =~ Regexp.new('^https?://')
         url

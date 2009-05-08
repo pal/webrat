@@ -3,7 +3,7 @@ require "webrat/core_extensions/blank"
 require "webrat/core/elements/element"
 
 module Webrat
-  class Link < Element #:nodoc:
+  class Link < Element 
 
     def self.xpath_search
       ".//a[@href]"

@@ -26,16 +26,16 @@ module Webrat
       end
     end
 
-    def rewrite_css_and_image_references(response_html) # :nodoc:
+    def rewrite_css_and_image_references(response_html) 
       return response_html unless doc_root
       response_html.gsub(/"\/(stylesheets|images)/, doc_root + '/\1')
     end
 
-    def saved_page_dir #:nodoc:
+    def saved_page_dir 
       File.expand_path(".")
     end
 
-    def doc_root #:nodoc:
+    def doc_root 
       nil
     end
 

@@ -2,7 +2,7 @@ module Webrat
   module Selenium
     module Matchers
 
-      class HaveTag < HaveSelector #:nodoc:
+      class HaveTag < HaveSelector 
         # ==== Returns
         # String:: The failure message.
         def failure_message

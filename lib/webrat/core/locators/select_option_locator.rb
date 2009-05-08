@@ -4,7 +4,7 @@ require "webrat/core/locators/locator"
 module Webrat
   module Locators
 
-    class SelectOptionLocator < Locator # :nodoc:
+    class SelectOptionLocator < Locator 
 
       def initialize(session, dom, option_text, id_or_name_or_label)
         @session = session
@@ -51,7 +51,7 @@ module Webrat
 
     end
 
-    def select_option(option_text, id_or_name_or_label = nil) #:nodoc:
+    def select_option(option_text, id_or_name_or_label = nil) 
       SelectOptionLocator.new(@session, dom, option_text, id_or_name_or_label).locate!
     end
 

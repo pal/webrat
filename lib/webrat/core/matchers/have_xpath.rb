@@ -4,7 +4,7 @@ require "webrat/core/xml/rexml"
 module Webrat
   module Matchers
 
-    class HaveXpath #:nodoc:
+    class HaveXpath 
       def initialize(expected, options = {}, &block)
         @expected = expected
         @options  = options

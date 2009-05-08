@@ -1,7 +1,7 @@
 module Webrat
   module Selenium
     module Matchers
-      class HasContent #:nodoc:
+      class HasContent 
         def initialize(content)
           @content = content
         end

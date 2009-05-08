@@ -1,7 +1,7 @@
 module Webrat
   module Locators
 
-    class Locator # :nodoc:
+    class Locator 
 
       def initialize(session, dom, value, *field_types)
         @session = session

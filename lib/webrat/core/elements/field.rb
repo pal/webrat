@@ -9,7 +9,7 @@ module Webrat
   class DisabledFieldError < WebratError
   end
 
-  class Field < Element #:nodoc:
+  class Field < Element 
     attr_reader :value
 
     def self.xpath_search
@@ -182,7 +182,7 @@ module Webrat
     end
   end
 
-  class ButtonField < Field #:nodoc:
+  class ButtonField < Field 
 
     def self.xpath_search
       [".//button", ".//input[@type = 'submit']", ".//input[@type = 'button']", ".//input[@type = 'image']"]
@@ -205,7 +205,7 @@ module Webrat
 
   end
 
-  class HiddenField < Field #:nodoc:
+  class HiddenField < Field 
 
     def self.xpath_search
       ".//input[@type = 'hidden']"
@@ -233,7 +233,7 @@ module Webrat
 
   end
 
-  class CheckboxField < Field #:nodoc:
+  class CheckboxField < Field 
 
     def self.xpath_search
       ".//input[@type = 'checkbox']"
@@ -270,7 +270,7 @@ module Webrat
 
   end
 
-  class PasswordField < Field #:nodoc:
+  class PasswordField < Field 
 
     def self.xpath_search
       ".//input[@type = 'password']"
@@ -278,7 +278,7 @@ module Webrat
 
   end
 
-  class RadioField < Field #:nodoc:
+  class RadioField < Field 
 
     def self.xpath_search
       ".//input[@type = 'radio']"
@@ -318,7 +318,7 @@ module Webrat
 
   end
 
-  class TextareaField < Field #:nodoc:
+  class TextareaField < Field 
 
     def self.xpath_search
       ".//textarea"
@@ -332,7 +332,7 @@ module Webrat
 
   end
 
-  class FileField < Field #:nodoc:
+  class FileField < Field 
 
     def self.xpath_search
       ".//input[@type = 'file']"
@@ -365,19 +365,19 @@ module Webrat
 
   end
 
-  class TextField < Field #:nodoc:
+  class TextField < Field 
     def self.xpath_search
       [".//input[@type = 'text']", ".//input[not(@type)]"]
     end
   end
 
-  class ResetField < Field #:nodoc:
+  class ResetField < Field 
     def self.xpath_search
       ".//input[@type = 'reset']"
     end
   end
 
-  class SelectField < Field #:nodoc:
+  class SelectField < Field 
 
     def self.xpath_search
       ".//select"

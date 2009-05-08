@@ -1,7 +1,7 @@
-module Webrat #:nodoc:
-  module MIME #:nodoc:
+module Webrat 
+  module MIME 
 
-    def self.mime_type(string_or_symbol) #:nodoc:
+    def self.mime_type(string_or_symbol) 
       if string_or_symbol.is_a?(String)
         string_or_symbol
       else

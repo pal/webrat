@@ -51,7 +51,7 @@ For example:
     attr_reader :current_url
     attr_reader :elements
 
-    def initialize(context = nil) #:nodoc:
+    def initialize(context = nil) 
       @http_method     = :get
       @data            = {}
       @default_headers = {}
@@ -61,12 +61,12 @@ For example:
       reset
     end
 
-    def current_dom #:nodoc:
+    def current_dom 
       current_scope.dom
     end
 
     # For backwards compatibility -- removing in 1.0
-    def current_page #:nodoc:
+    def current_page 
       page = OpenStruct.new
       page.url = @current_url
       page.http_method = @http_method
@@ -74,7 +74,7 @@ For example:
       page
     end
 
-    def doc_root #:nodoc:
+    def doc_root 
       nil
     end
 
@@ -91,11 +91,11 @@ For example:
       header('HTTP_AUTHORIZATION', "Basic #{encoded_login}")
     end
 
-    def headers #:nodoc:
+    def headers 
       @default_headers.dup.merge(@custom_headers.dup)
     end
 
-    def request_page(url, http_method, data) #:nodoc:
+    def request_page(url, http_method, data) 
       h = headers
       h['HTTP_REFERER'] = @current_url if @current_url
 
@@ -139,11 +139,11 @@ For example:
        (@_identical_redirect_count || 0) > Webrat.configuration.infinite_redirect_limit
     end
 
-    def success_code? #:nodoc:
+    def success_code? 
       (200..499).include?(response_code)
     end
 
-    def redirect? #:nodoc:
+    def redirect? 
       response_code / 100 == 3
     end
 
@@ -160,11 +160,11 @@ For example:
       redirect? ? response_location : nil
     end
 
-    def exception_caught? #:nodoc:
+    def exception_caught? 
       response_body =~ /Exception caught/
     end
 
-    def current_scope #:nodoc:
+    def current_scope 
       scopes.last || page_scope
     end
 
@@ -208,15 +208,15 @@ For example:
     webrat_deprecate :visits, :visit
 
     # Subclasses can override this to show error messages without html
-    def formatted_error #:nodoc:
+    def formatted_error 
       response_body
     end
 
-    def scopes #:nodoc:
+    def scopes 
       @_scopes ||= []
     end
 
-    def page_scope #:nodoc:
+    def page_scope 
       @_page_scope ||= Scope.from_page(self, response, response_body)
     end
 

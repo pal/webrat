@@ -1,7 +1,7 @@
 require "webrat/core/elements/element"
 
 module Webrat
-  class Label < Element #:nodoc:
+  class Label < Element 
 
     attr_reader :element
 

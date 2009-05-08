@@ -1,7 +1,7 @@
 require "webrat/core/elements/element"
 
 module Webrat
-  class Area < Element #:nodoc:
+  class Area < Element 
 
     def self.xpath_search
       ".//area"

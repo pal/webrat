@@ -1,7 +1,7 @@
 require "webrat/core/elements/element"
 
 module Webrat
-  class SelectOption < Element #:nodoc:
+  class SelectOption < Element 
 
     def self.xpath_search
       ".//option"

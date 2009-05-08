@@ -3,7 +3,7 @@ require "webrat/core/matchers/have_xpath"
 module Webrat
   module Matchers
 
-    class HaveSelector < HaveXpath #:nodoc:
+    class HaveSelector < HaveXpath 
       # ==== Returns
       # String:: The failure message.
       def failure_message

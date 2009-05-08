@@ -1,4 +1,4 @@
-class Object #:nodoc:
+class Object 
   # An object is blank if it's false, empty, or a whitespace string.
   # For example, "", "   ", +nil+, [], and {} are blank.
   #
@@ -19,39 +19,39 @@ class Object #:nodoc:
   end
 end
 
-class NilClass #:nodoc:
+class NilClass 
   def blank?
     true
   end
 end
 
-class FalseClass #:nodoc:
+class FalseClass 
   def blank?
     true
   end
 end
 
-class TrueClass #:nodoc:
+class TrueClass 
   def blank?
     false
   end
 end
 
-class Array #:nodoc:
+class Array 
   alias_method :blank?, :empty?
 end
 
-class Hash #:nodoc:
+class Hash 
   alias_method :blank?, :empty?
 end
 
-class String #:nodoc:
+class String 
   def blank?
     self !~ /\S/
   end
 end
 
-class Numeric #:nodoc:
+class Numeric 
   def blank?
     false
   end

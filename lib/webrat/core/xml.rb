@@ -2,10 +2,10 @@ require "webrat/core/xml/nokogiri"
 require "webrat/core/xml/hpricot"
 require "webrat/core/xml/rexml"
 
-module Webrat #:nodoc:
-  module XML #:nodoc:
+module Webrat 
+  module XML 
 
-    def self.document(stringlike) #:nodoc:
+    def self.document(stringlike) 
       if Webrat.configuration.parse_with_nokogiri?
         Webrat.nokogiri_document(stringlike)
       else
@@ -13,7 +13,7 @@ module Webrat #:nodoc:
       end
     end
 
-    def self.html_document(stringlike) #:nodoc:
+    def self.html_document(stringlike) 
       if Webrat.configuration.parse_with_nokogiri?
         Webrat.html_nokogiri_document(stringlike)
       else
@@ -21,7 +21,7 @@ module Webrat #:nodoc:
       end
     end
 
-    def self.xml_document(stringlike) #:nodoc:
+    def self.xml_document(stringlike) 
       if Webrat.configuration.parse_with_nokogiri?
         Webrat.xml_nokogiri_document(stringlike)
       else
@@ -101,7 +101,7 @@ module Webrat #:nodoc:
       end.flatten.compact
     end
 
-    def self.css_search(element, *searches) #:nodoc:
+    def self.css_search(element, *searches) 
       xpath_search(element, css_to_xpath(*searches))
     end
 

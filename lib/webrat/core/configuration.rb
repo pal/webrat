@@ -9,7 +9,7 @@ module Webrat
     @@configuration = configuration
   end
 
-  def self.configuration # :nodoc:
+  def self.configuration 
     @@configuration ||= Webrat::Configuration.new
   end
 
@@ -24,7 +24,7 @@ module Webrat
     attr_writer :parse_with_nokogiri
 
     # Webrat's mode, set automatically when requiring webrat/rails, webrat/merb, etc.
-    attr_reader :mode # :nodoc:
+    attr_reader :mode 
 
     # Save and open pages with error status codes (500-599) in a browser? Defualts to true.
     attr_writer :open_error_files
@@ -58,7 +58,7 @@ module Webrat
     # loop? Defaults to 10
     attr_accessor :infinite_redirect_limit
 
-    def initialize # :nodoc:
+    def initialize 
       self.open_error_files = true
       self.parse_with_nokogiri = !Webrat.on_java?
       self.application_environment = :test
@@ -70,11 +70,11 @@ module Webrat
       self.selenium_browser_key = '*firefox'
     end
 
-    def parse_with_nokogiri? #:nodoc:
+    def parse_with_nokogiri? 
       @parse_with_nokogiri ? true : false
     end
 
-    def open_error_files? #:nodoc:
+    def open_error_files? 
       @open_error_files ? true : false
     end
 

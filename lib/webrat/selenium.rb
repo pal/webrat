@@ -70,7 +70,7 @@ module Webrat
 end
 
 if defined?(ActionController::IntegrationTest)
-  module ActionController #:nodoc:
+  module ActionController 
     IntegrationTest.class_eval do
       include Webrat::Methods
       include Webrat::Selenium::Methods

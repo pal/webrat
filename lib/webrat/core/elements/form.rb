@@ -5,7 +5,7 @@ require "webrat/core/elements/element"
 require "webrat/core/locators/field_named_locator"
 
 module Webrat
-  class Form < Element #:nodoc:
+  class Form < Element 
     attr_reader :element
 
     def self.xpath_search
@@ -70,7 +70,7 @@ module Webrat
       end
     end
 
-    def merge_hash_values(a, b) # :nodoc:
+    def merge_hash_values(a, b) 
       a.keys.each do |k|
         if b.has_key?(k)
           case [a[k], b[k]].map{|value| value.class}

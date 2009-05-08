@@ -11,14 +11,14 @@ module Webrat
     include Logging
     include Locators
 
-    def self.from_page(session, response, response_body) #:nodoc:
+    def self.from_page(session, response, response_body) 
       new(session) do
         @response = response
         @response_body = response_body
       end
     end
 
-    def self.from_scope(session, scope, selector) #:nodoc:
+    def self.from_scope(session, scope, selector) 
       new(session) do
         @scope = scope
         @selector = selector
@@ -27,7 +27,7 @@ module Webrat
 
     attr_reader :session
 
-    def initialize(session, &block) #:nodoc:
+    def initialize(session, &block) 
       @session = session
       instance_eval(&block) if block_given?
 
@@ -289,7 +289,7 @@ module Webrat
       FormLocator.new(@session, dom, id).locate.submit
     end
 
-    def dom # :nodoc:
+    def dom 
       return @dom if @dom
 
       if @selector
@@ -303,7 +303,7 @@ module Webrat
 
   protected
 
-    def page_dom #:nodoc:
+    def page_dom 
       return @response.dom if @response.respond_to?(:dom)
 
       if @session.xml_content_type?
@@ -320,7 +320,7 @@ module Webrat
       Webrat::XML.css_at(@scope.dom, @selector)
     end
 
-    def locate_field(field_locator, *field_types) #:nodoc:
+    def locate_field(field_locator, *field_types) 
       if field_locator.is_a?(Field)
         field_locator
       else
@@ -328,7 +328,7 @@ module Webrat
       end
     end
 
-    def locate_id_prefix(options, &location_strategy) #:nodoc:
+    def locate_id_prefix(options, &location_strategy) 
       return options[:id_prefix] if options[:id_prefix]
 
       if options[:from]
@@ -342,7 +342,7 @@ module Webrat
       end
     end
 
-    def forms #:nodoc:
+    def forms 
       @forms ||= Form.load_all(@session, dom)
     end
 
